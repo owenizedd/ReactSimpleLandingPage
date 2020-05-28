@@ -1,0 +1,7 @@
+-- Hurry development (Total time to develop: 1-2 hours) --
+
+Teknologi: ReactJS, Git
+
+CSS Pure, tidak menggunakan SASS walau saya cukup familiar, agar cepat setup projectnya.
+
+Saya menggunakan minimalist react setup, tidak perlu CRA (Create-react-app) cukup jalankan index.html di browser
