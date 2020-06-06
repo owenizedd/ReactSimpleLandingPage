@@ -109,6 +109,7 @@ main{
   padding: 25px;
   width: 270px;
   border-radius: 20px;
+  margin-top: 10px;
 }
 .box:hover{
   background: #CA97E0;
@@ -146,4 +147,34 @@ form{
 }
 .modal ~ *{
   filter: blur(2px);
+}
+.menu-button{
+  display: none;
+}
+
+@media (max-width: 768px){
+  nav{
+    flex-direction: column;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    height: 200px;
+    width: 100vw !important;
+    padding: 10px 0;
+    
+    background:rgb(4, 63, 152);
+    
+  }
+  .menu-button{
+    display: block;
+    width: 120px;
+    height: 50px;
+    padding: 10px 10px;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .modal{
+    left: 20vw;
+  }
 }

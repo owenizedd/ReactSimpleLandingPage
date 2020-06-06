@@ -2,7 +2,8 @@
 class Pages extends React.Component{
   state={
     page: 'home',
-    login: false
+    login: false,
+    showNav: innerWidth <= 768 ? false : true
   }
   showHome = () => {
     this.setState({page: 'home'})
@@ -20,7 +21,9 @@ class Pages extends React.Component{
     console.log("YES")
     this.setState({login: !this.state.login})
   }
-
+  toggleNav = () => {
+    this.setState({showNav: !this.state.showNav})
+  }
   render(){
     return(
       <React.Fragment>
@@ -30,12 +33,16 @@ class Pages extends React.Component{
             <img src="logo.svg" alt="" className="logo"/>
             <h2 onClick={this.showHome}>HOME</h2>
           </div>
-          <nav>
-            <a href="#" onClick={this.showAbout}>About</a>
-            <a href="#"  onClick={this.showPricing}>Pricing</a>
-            <a href="#"  onClick={this.showContact}>Contact</a>
-            <a href="#"  onClick={this.toggleLogin} className="bordered-button">Login</a>
-          </nav>
+          {
+            this.state.showNav &&
+            <nav>
+              <a href="#" onClick={this.showAbout}>About</a>
+              <a href="#"  onClick={this.showPricing}>Pricing</a>
+              <a href="#"  onClick={this.showContact}>Contact</a>
+              <a href="#"  onClick={this.toggleLogin} className="bordered-button">Login</a>
+            </nav>
+          }
+          <div className="menu-button bordered-button" onClick={this.toggleNav}>Show Menu</div>
         </header>
         {this.state.page === 'home' && <Landing/>}
         {this.state.page === 'about' && <About/>}
